@@ -7,9 +7,11 @@ const router = express.Router();
 
 router.get('/', [
     isAuthenticated,
+    (err, req, res, next)=>{
+        res.json(err);
+    },
     async(req, res)=>{
-    console.log("middleware level 2");
-    res.json(await studentsRepo.getAllStudents(req.query.name, req.query.surname));
+        res.json(await studentsRepo.getAllStudents(req.query.name, req.query.surname));
 }])
 
 router.post('/', async(req, res)=>{
