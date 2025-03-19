@@ -19,13 +19,13 @@ router.post('/', async(req, res)=>{
     res.json(req.body);
 })
 
-router.put('/', async(req, res)=>{
-    await studentsRepo.updateStudent(req.body);
+router.patch('/:id', async(req, res)=>{
+    await studentsRepo.updateStudent(req.params.id, req.body);
     res.json(req.body);
 })
 
-router.delete('/', async(req, res)=>{
-    await studentsRepo.deleteStudent(req.body);
+router.delete('/:id', async(req, res)=>{
+    await studentsRepo.deleteStudent(raq.params.id);
     res.json(req.body);
 })
 

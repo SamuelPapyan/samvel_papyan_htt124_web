@@ -27,15 +27,14 @@ async function addStudent(newStudent) {
     await Student.insertOne(newStudent);
 }
 
-async function deleteStudent(student) {
-    const id = student.id;
+async function deleteStudent(id) {
     await Student.findByIdAndDelete(id);
 }
 
-async function updateStudent(student) {
+async function updateStudent(id, student) {
     if (student.password) 
         student.password = await bcrypt.hash(student.password, process.env.SALT_OR_ROUNDS)
-    await Student.findByIdAndUpdate(student.id, student)
+    await Student.findByIdAndUpdate(id, student)
 }
 
 module.exports = {getStudentById, getAllStudents, addStudent, deleteStudent, updateStudent, getStudentByUsername};

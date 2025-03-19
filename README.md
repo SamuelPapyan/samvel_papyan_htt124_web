@@ -1,5 +1,11 @@
 # Samvel Papyan HTT124 WEB
 
+## Installing Packages
+
+To install required packages type the following command in terminal
+
+`` npm install ``
+
 ## Environment Variables
 
 Find .env.example file and rename it into .env and then change the variables with values which you need.
@@ -15,13 +21,15 @@ To start project enter the following command in terminal.
 
 GET / - returns the list of students (checking for authentication)
 
+GET /:id - returns a student by id
+
 GET /add - returns the html file with student form
 
 POST / - adds posted student into db
 
-PUT / - updates student data (still requires id in body)
+PATCH /:id - updates student data by id
 
-DELETE / - deletes student by id (still required id in body)
+DELETE /:id - deletes student by id
 
 GET /auth/login - returns the html file with login form
 
