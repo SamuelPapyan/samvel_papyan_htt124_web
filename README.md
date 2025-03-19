@@ -13,7 +13,7 @@ To start project enter the following command in terminal.
 
 ## API Endpoints
 
-GET / GET - returns the list of students (checking for authentication)
+GET / - returns the list of students (checking for authentication)
 
 GET /add - returns the html file with student form
 
